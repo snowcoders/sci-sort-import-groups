@@ -2,7 +2,7 @@
     "name": "sci-sort-import-groups",
     "displayName": "Sort imports by module",
     "description": "VS Code plugin that helps keep your javascript import statements organized while maintaining comments and semantic groupings",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "Snowcoders",
     "engines": {
         "vscode": "^1.18.0"
@@ -14,7 +14,7 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/snowcoders/sci-sort-import-groups.git"
-      },
+    },
     "categories": [
         "Formatters"
     ],
