@@ -25,7 +25,7 @@ export const sortImportGroupsForStrings = (lines: string[]) => {
         let line = lines[x];
         if (line.startsWith('import')) {
             let fullImportStatement = [line];
-            while (!line.endsWith(';')) {
+            while (!line.indexOf("'") && !line.indexOf('"')) {
                 x++;
                 line = lines[x];
                 fullImportStatement.push(line);
@@ -91,8 +91,8 @@ const sortImportGroup = (moduleNameToImportLines: Map<string, string[]>) => {
 };
 
 export const getModuleName = (lines: string[]) => {
-    // Note, this always assumes you have semicolons to terminate the line
-    if (lines[lines.length - 1].indexOf(';') === -1) {
+    var lastLine = lines[lines.length - 1] 
+    if (!lastLine.indexOf("'") && !lastLine.indexOf('"')) {
         return null;
     }
 
