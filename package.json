@@ -2,7 +2,7 @@
     "name": "sci-sort-import-groups",
     "displayName": "Sort imports by module",
     "description": "VS Code plugin that helps keep your javascript import statements organized while maintaining comments and semantic groupings",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "publisher": "Snowcoders",
     "engines": {
         "vscode": "^1.18.0"
@@ -47,6 +47,7 @@
         "@types/chai": "^4.0.10"
     },
     "dependencies": {
+        "@snowcoders/sortier": "^1.0.1",
         "ts-node": "^4.0.1"
     }
 }
