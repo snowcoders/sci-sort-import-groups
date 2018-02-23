@@ -2,14 +2,12 @@
 
 Sort import statements by group while preserving comments. 
 
-Note: Meant as a work around since sort-imports doesn't support comments. Will likely be deprecated once that functionality is available within that library.
-
 ## Run it
 
 1. Show all commands
  - Windows - F1 or Ctrl + Shift + P
  - Mac - Ctrl + Cmd + P
-2. Run Sort (module)
+2. Run `Sort (module)`
 
 ## Features
 
@@ -74,11 +72,3 @@ Here is what is happening here:
 ## Extension Settings
 
 None yet, feel free to request some in Github!
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release!
