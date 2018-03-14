@@ -33,7 +33,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     const extensionName = 'sci-sort-import-groups';
     if (vscode.workspace.getConfiguration(extensionName).get<Boolean>('onSave')) {
-        vscode.workspace.onWillSaveTextDocument(onSaveListener);
+        vscode.workspace.onDidSaveTextDocument(runSortier);
     };
 }
 
@@ -41,12 +41,11 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate() {
 }
 
-function onSaveListener({ document, waitUntil }: vscode.TextDocumentWillSaveEvent) {
-    const sortedText = format(document.fileName, {});
-    if (!sortedText) {
-        return;
+function runSortier(document: vscode.TextDocument) {
+    try {
+        format(document.fileName, {});
     }
-
-    const edits = Promise.resolve([new vscode.TextEdit(new vscode.Range(0, 0, Number.MAX_VALUE, Number.MAX_VALUE), sortedText)]);
-    waitUntil(edits);
+    catch (e) {
+        vscode.window.showErrorMessage("Sortier threw an error: " + e.message);
+    }
 }
