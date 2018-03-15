@@ -71,4 +71,6 @@ Here is what is happening here:
 
 ## Extension Settings
 
-None yet, feel free to request some in Github!
+This extension has the following settings:
+
+  - sci-sort-import-groups.onSave: toggle auto sorting on save (default: false).

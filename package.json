@@ -2,7 +2,7 @@
     "name": "sci-sort-import-groups",
     "displayName": "Sort imports by module",
     "description": "VS Code plugin that helps keep your javascript import statements organized while maintaining comments and semantic groupings",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "publisher": "Snowcoders",
     "engines": {
         "vscode": "^1.18.0"
@@ -19,7 +19,11 @@
         "Formatters"
     ],
     "activationEvents": [
-        "onCommand:extension.importSorter"
+        "onCommand:extension.importSorter",
+        "onLanguage:javascript",
+        "onLanguage:javascriptreact",
+        "onLanguage:typescript",
+        "onLanguage:typescriptreact"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -27,6 +31,18 @@
             {
                 "command": "extension.importSorter",
                 "title": "Sort (module)"
+            }
+        ],
+        "configuration": [
+            {
+                "title": "SCI Sort Import",
+                "properties": {
+                    "sci-sort-import-groups.onSave": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Executes the sort command automatically on each save."
+                    }
+                }
             }
         ]
     },

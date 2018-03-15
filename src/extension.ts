@@ -30,8 +30,22 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     context.subscriptions.push(disposable);
+
+    const extensionName = 'sci-sort-import-groups';
+    if (vscode.workspace.getConfiguration(extensionName).get<Boolean>('onSave')) {
+        vscode.workspace.onDidSaveTextDocument(runSortier);
+    };
 }
 
 // this method is called when your extension is deactivated
 export function deactivate() {
+}
+
+function runSortier(document: vscode.TextDocument) {
+    try {
+        format(document.fileName, {});
+    }
+    catch (e) {
+        vscode.window.showErrorMessage("Sortier threw an error: " + e.message);
+    }
 }
