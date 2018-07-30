@@ -1,3 +1,7 @@
+# Deprecation notice
+After the positive support of this project, we have expanded upon this initial idea with [Sortier](https://github.com/snowcoders/sortier
+). Please check that project out and expect very few updates to this one as Sortier is now our main focus for ordering source code. It also has a [VS Code extension](https://github.com/snowcoders/sortier-vscode)!
+
 # Sort import groups
 
 Sort import statements by group while preserving comments. 
