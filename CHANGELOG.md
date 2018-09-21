@@ -1,5 +1,8 @@
 # Change Log
 
+## [2.1.1]
+Added deprecation notice
+
 ## [2.1.0]
 Added new setting `onSave`. Defaults to false. When true it triggers the sort command on each save.
 
